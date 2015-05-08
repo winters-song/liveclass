@@ -1,0 +1,15 @@
+<div class="item-wrapper">
+  <div class="series-item" >
+    <a class="thumb <%=description?'details':'' %>" href="<%=series_link %>" > 
+      <img src="<%=thumb %>">
+      <p><%=description %></p>
+    </a>
+
+    <div class="intro">
+      <h4 class="name"><a href="<%=series_link %>" ><%=title %></a></h4>
+      <% if(lecturer_realname){ %>
+      	<a href="<%=user_link %>" class="lecturer"><%=lecturer_realname %></a>
+      <% } %>	
+    </div>
+  </div>
+</div>

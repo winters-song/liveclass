@@ -1,0 +1,28 @@
+<div class="item">
+  <div class="col-xs-12 col-md-4 ">
+    <p class="name"><%=name %></p>
+    <strong class="error text-danger"></strong>
+  </div>
+  <div class="col-xs-12 col-md-4 ">
+    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="margin-bottom:10px;">
+      <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+    </div>
+    <p class="size"></p>
+  </div>
+  <div class="col-xs-12 col-md-4 ">
+    <button class="btn btn-primary start" disabled >
+      <i class="glyphicon glyphicon-upload"></i>
+      <span><%=upload %></span>
+    </button>
+
+    <button class="btn btn-warning cancel">
+      <i class="glyphicon glyphicon-ban-circle"></i>
+      <span><%=cancel %></span>
+    </button>
+
+    <button class="btn btn-danger remove hidden">
+      <i class="glyphicon glyphicon-ban-trash"></i>
+      <span><%=remove %></span>
+    </button>
+  </div>
+</tr>

@@ -1,0 +1,77 @@
+<div class="item-wrapper">
+  <div class="class-item">
+    <a class="thumb <%=finish?'finished':'' %>" href="<%=class_link %>" >
+      <div class="highlight">
+        <span class="time"><%=time %></span>
+        <span class="date"><%=date %></span>
+        <%  if (finish){ %>
+        <span class="state glyphicon glyphicon-ok" title="<%=finished %>" ></span>
+        <%  } else { %>
+        <span class="state glyphicon glyphicon-headphones" title="<%=live %>" ></span>
+        <%  }  %>
+      </div>
+    </a>
+
+    <div class="body">
+      <span class="name">
+        <a href="<%=class_link %>" ><%=name %></a>
+      </span>
+
+      <div class="org">
+        <img src="<%=org_avatar %>">
+      </div>
+      
+      <div class="lecturer">
+        <div class="avatar-md">
+          <a href="<%=user_link %>" >
+            <img src="<%=lecturer_avatar %>" class="avatar-img" alt="">
+            <%  if (teacher_star == 'gold'){ %>
+            <img src="/Public/img/gold_star.png" class="star" alt="" title="<%=gold_teacher %>">
+            <%  } else if (teacher_star == 'silver'){ %>
+            <img src="/Public/img/silver_star.png" class="star" alt="" title="<%=silver_teacher %>">
+            <%  }  %>
+          </a>
+        </div>
+        <a class="ellipsis user" href="<%=user_link %>" ><%=lecturer_realname %></a>
+        <div class="score">
+          <span class="int"><%=score_int %></span>
+          <span class="float"><%=score_float %></span>
+        </div>
+      </div>
+
+      <div class="buttons">
+    <%  if(!finish){ 
+          if(seats_status) {  %>
+          <% if(!owner) { %>
+            <a href="#" class="btn btn-sm cancel-btn" data-loading-text="<%=waiting_text %>..." title="<%=cancel %>">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+          <% } %>
+            <a href="#" target="_blank" class="btn btn-success enter-btn" data-loading-text="<%=waiting_text %>..." title="<%=enter %>">
+              <span class="glyphicon glyphicon-log-in"></span>
+            </a>
+    
+    <%    } else if (is_open == 1){  %>
+            <a href="#" class="btn btn-primary join-btn" data-loading-text="<%=waiting_text %>..." >
+              <%=join_class %>
+            </a>
+    <%    } else { %>
+            <a href="<%=signup_url %>" class="btn btn-primary" target="_blank"><%=sign_up %></a>
+    <%    }
+        } else { %>
+            <a href="#" target="_blank" class="btn btn-success replay-btn" data-loading-text="<%=waiting_text %>..." title="<%=replay_class %>">
+              <span class="glyphicon glyphicon-play"></span>
+            </a>
+    <%  }  %>
+      </div>
+
+      <div class="info">
+      <% if(!finish && seats_num!== -1){ %>
+      <p class="time"><%=seat_remain %> : <i class="seats"><%=seats_num %></i></p>
+      <% } else if (!!duration) { %>
+      <p class="time"><%=lesson %> : <i><%=duration %> <%=mins %></i></p>
+      <% }  %>
+      </div>
+    </div>
+  </div>
+</div>

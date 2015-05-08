@@ -1,0 +1,138 @@
+
+<nav id="banner" class="navbar navbar-inverse navbar-fixed-top" >
+  <div class="container">
+    <div class="navbar-header">
+      <button id="nav-btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html"><%=live_class %></a>
+    </div>
+
+    <div id="navbar" class="collapse navbar-collapse pull-left">
+      <ul class="nav navbar-nav primary-nav">
+        <li>
+          <a href="index.html">
+            <span class="glyphicon glyphicon-home"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/Public/classes.html?state=1&amp;order=1"><%=classes %></a>
+        </li>
+        <li>
+          <a href="/Public/series.html"><%=nav_series %></a>
+        </li>
+        <li>
+          <a href="/Public/teachers.html"><%=teachers %></a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+
+    <ul class="nav navbar-nav navbar-right" id="top-toolbar">
+      <li class="hidden-xs">
+        <a id="global-search-btn" href="javascript:;" class="icon-btn" >
+          <span class="glyphicon glyphicon-search"></span>
+        </a>
+      </li>
+      <li class="hidden-xs">
+        <form id="global-search" class="navbar-form" role="search" action="/Public/classes.html">
+          <input type="text" name="name" >
+        </form>
+      </li>
+
+      <li class="dropdown visible-xs">
+        <a href="javascript:;" class="dropdown-toggle icon-btn" data-toggle="dropdown">
+          <span class="glyphicon glyphicon-search"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <form action="/Public/classes.html" class="navbar-form navbar-left">
+              <input type="text" name="name" class="form-control ime" placeholder="<%=search_class %>...">
+            </form>            
+          </li>
+        </ul>
+      </li>
+
+      <li id="lang-btn" class="dropdown">
+        <a id="lang-drop" href="#" class="dropdown-toggle icon-btn" data-toggle="dropdown">
+          <span class="glyphicon glyphicon-globe"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="lang-drop">
+          <li><a href="javascript:;" data-label="en">English</a></li>
+          <li><a href="javascript:;" data-label="cn">简体中文</a></li>
+          <li><a href="javascript:;" data-label="fr">Français</a></li>
+          <li><a href="javascript:;" data-label="ko">한국어</a></li>
+          <li><a href="javascript:;" data-label="ja">日本語</a></li>
+          <li><a href="javascript:;" data-label="ru">Pусский</a></li>
+          <li><a href="javascript:;" data-label="es">Español</a></li>
+        </ul>
+      </li>
+
+      <li id="login" class="dropdown hidden">
+        <a id="login-drop" href="#" class="dropdown-toggle icon-btn" data-toggle="dropdown">
+          <span class="glyphicon glyphicon-user"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="lang-drop">
+          <li><a href="#" id="login-btn" ><%=sign_in %></a></li>
+          <li><a href="#" id="register-btn" target="_blank" ><%=register %></a></li>
+        </ul>
+      </li>
+
+      <li id="profiles" class="dropdown hidden"></li>
+    </ul>
+  </div>
+</nav>
+
+<nav id="navigation" class="navbar navbar-fixed-top hidden">
+  <div class="container">
+    <div id="sencond-navbar">
+      <ul id="role-navbar" class="nav navbar-nav nav-pills pull-left">
+        <li class="divider"  data-tab="divider"></li>
+        <li id="role-btn" class="dropdown" data-tab="role" >
+          <a id="role-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+            <%=view_as %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="role-drop">
+            <li><a href="javascript:;" id="role-teacher"><%=teacher %></a></li>
+            <li><a href="javascript:;" id="role-student"><%=student %></a></li>
+          </ul>
+        </li>
+
+        <li class="li-teacher" data-tab="liveclass">
+          <a href="/Public/myClass_t.html" class="nav-btn" ><%=my_class %></a>
+        </li>
+        <li class="li-teacher" data-tab="mySeries_t">
+          <a href="/Public/mySeries_t.html" class="nav-btn"><%=nav_myseries %></a>
+        </li>
+        <li class="li-teacher" data-tab="courseware">
+          <a href="/Public/myCourseware_t.html" class="nav-btn" ><%=nav_mycourseware %></a>
+        </li>
+        <li class="li-teacher" data-tab="students">
+          <a href="/Public/students.html" class="nav-btn" ><%=nav_mystudent %></a>
+        </li>
+
+        <li class="li-student" data-tab="myClass">
+          <a href="/Public/myClass.html" class="nav-btn" ><%=my_class %></a>
+        </li>
+        <li class="li-student" data-tab="mySeries">
+          <a href="/Public/mySeries.html" class="nav-btn"><%=nav_myseries %></a>
+        </li>
+        <li class="li-student" data-tab="myCourseware">
+          <a href="/Public/myCourseware.html" class="nav-btn" ><%=nav_mycourseware %></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="alert alert-warning alert-dismissible" id="before_maintenance" style="display:none;" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <div class="container">
+    <strong style="font-size:16px;"></strong>
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+<a href="#"  class="dropdown-toggle" data-toggle="dropdown">
+  <div class="avatar-sm">
+    <img src="<%=Avatar %>" alt=""> 
+  </div> 
+  <span class='name'><%=NickName %></span>
+</a>
+<ul class="dropdown-menu">
+  <% if(teacher){ %>
+  <li>
+    <a href="profile.html?id=<%=ID %>" ><%=account %></a></li>
+  </li>
+  <% } %>
+  <li>
+    <a href="/user/logout" ><%=sign_out %></a></li>
+  </li>
+</ul>

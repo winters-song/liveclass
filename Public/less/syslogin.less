@@ -1,0 +1,196 @@
+
+@import "_base.less";
+
+/*** params ***/
+@path : "/img";
+
+@font-family: "微软雅黑";
+@title-font-family: "黑体","Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+
+html{
+  overflow: hidden;
+}
+body{
+  overflow: hidden;
+  font-family: @font-family;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.wrap{
+  overflow: hidden;
+  padding-bottom: 30px;
+
+	.band {
+		position: absolute;
+		display: inline-block;
+		left: -32px;
+		top: 32px;
+		box-shadow: 0px 1px 5px rgba(0,0,0,.6);
+		text-shadow: 0 1px 0px #fff;
+		text-align: center;
+		width: 150px;
+		padding: 3px 10px;
+		color:#555;
+		font-weight: 700;
+		.transform (-45deg, 1, 0, 0);
+		.linearGradient(0, #f6f6f6, 100, #e5e5e5);
+
+		&:hover{
+			text-decoration: none;
+			color: #09f;	
+		}
+	}
+}
+
+.no-csstransforms .band{
+	display: none;
+}
+
+#logo {
+  margin-top: 180px;
+  margin-left: 100px;
+  padding-left: 50px;
+  width: 550px;
+  border-left: 1px dotted #ccc;
+
+  .title {
+	  display: block;
+	  font-size: 50px;
+	  color: #353535;
+	  width: 100%;
+	  font-family: @title-font-family;
+	}
+
+	.description {
+	  position: relative;
+	  top: 5px;
+	  font-size: 50px;
+	  color: #cecece;
+	  line-height: .75;
+	  line-height: 2em;
+	  font-family: @title-font-family;
+	}
+}
+
+.form{
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 370px;
+  font-size: 20px;
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+	  
+	.login-btn{
+	  margin-top: 10px;
+	  float: left;
+	}
+
+  .alert{
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  #forget{
+    font-size: 14px;
+  }
+}
+
+.lt-ie8 .form .form-control{
+  width: 176px;
+  height: 26px;
+  padding-bottom: 0;
+}
+
+
+.main-footer {
+  padding: 20px 0 80px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right: 0;
+  display: block;
+  font-size: 14px;
+  border-top: 1px dotted #ccc;
+
+  div{
+	  padding: 0 20px;
+	}
+
+	p, ul{
+    line-height: 24px;
+    width:100%;
+  }
+
+	li{
+    display: inline;
+  }
+
+	a {
+    padding: 0 6px;
+    color: #666;
+
+    &:hover{
+	    color: #817ccc;
+	  }
+  }
+}
+
+
+@media only screen and (max-height: 740px) {
+	.form {
+	  position: static;
+	  margin:0 auto;
+	}
+
+	.main-footer{
+		padding-bottom: 20px;
+		position: static;
+	}
+}
+
+@media only screen and (max-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+
+#logo {
+  margin: 20px auto;
+  width: 100%;
+  padding: 0;
+  border-left: 1px dotted #eee;
+}
+
+#logo .title {
+  display: block;
+  font-size: 3.6em;
+  text-align: center;
+}
+
+#logo .description {
+  display: block;
+  font-size: 3.6em;
+  text-align: center;
+}
+
+.form {
+  position: static;
+  margin:0 auto;
+}
+
+.main-footer {
+  position: static;
+  font-size: 12px;
+}
+
+}

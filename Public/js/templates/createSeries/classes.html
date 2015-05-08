@@ -1,0 +1,49 @@
+<div class="item-list-wrapper">
+  <div class="half-wrapper">
+    <div class="half-header">
+      <label><%=selected %>:</label>
+    </div>
+    <div class="half" style="max-height:598px;">
+      <div class="selected-list"></div>
+    </div>
+    <div class="buttons">
+      <a href="#" class="btn btn-success btn-md submit-btn" data-loading-text="<%=waiting_text %>..." >
+        <span class="glyphicon glyphicon-send"></span> <%=submit %>
+      </a>
+
+      <a href="#" class="btn btn-link btn-md prev-btn">
+        <%=step_prev %>
+      </a> 
+    </div>
+  </div>
+
+	<div class="half-wrapper select-box">
+    <div class="half-header">
+      <label><%=select_class %>:</label>
+    </div>
+
+    <form id="class-search" class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" name="name" >
+          <span class="input-group-btn">
+            <button class="btn btn-primary search-btn" type="button" >
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </form>
+
+    <div class="half">
+    	<div class="item-list"></div>
+    </div>
+    <div class="pagingbar"></div>
+  </div>
+</div>
+
+<div class="form-group error-info" style="display:none;">
+  <p class="alert alert-danger"></p>
+</div>
+
+

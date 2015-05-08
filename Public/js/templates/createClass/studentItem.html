@@ -1,0 +1,14 @@
+<div class="item-wrapper">
+  <div class="student-option <%=selected?'selected':'' %>">
+    <img src="<%=Avatar %>" class="avatar">
+    <span class="name ellipsis"><%=name %></span>
+    <div class="item-buttons">
+      <% if(state =='add' && !selected){ %>
+      <a href="#" class="btn btn-primary add-btn"><%=add %></a>
+      <% } %>
+      <% if(state =='remove'){ %>
+      <a href="#" class="btn btn-danger remove-btn"><%=remove %></a>
+      <% } %>
+    </div>
+  </div>
+</div>

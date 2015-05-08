@@ -1,0 +1,18 @@
+<div class="courseware-option <%=selected?'selected':'' %>">
+  <i class="icon32 icon_<%=ext %>"></i>
+  <span class="name ellipsis">
+    <a href="/Public/preview.html?id=<%=id %>" target="_blank"><%=name %></a>
+  </span>
+  <div class="item-buttons">
+    <% if(state =='add' && !selected){ %>
+    <a href="#" class="btn btn-sm btn-default add-btn" title="<%=add %>">
+      <span class="glyphicon glyphicon-plus"></span>
+    </a>
+    <% } %>
+    <% if(state =='remove'){ %>
+    <a href="#" class="btn btn-sm btn-default remove-btn" title="<%=remove %>">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+    <% } %>
+  </div>
+</div>

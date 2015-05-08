@@ -1,0 +1,35 @@
+<div class="thumb">
+  <div class="avatar-md">
+    <a href="<%=profileUrl %>">
+      <img src="<%=thumbUrl %>" alt="" class="avatar-img">
+      <%  if(teacher_star == 'gold'){ %>
+        <img src="/Public/img/gold_star.png" class="star" alt="" title="<%=gold_teacher %>">
+      <%  } else if(teacher_star == 'silver'){ %>
+        <img src="/Public/img/silver_star.png" class="star" alt="" title="<%=silver_teacher %>">
+      <%  }  %>
+    </a>
+  </div>
+</div>
+<div>
+  <label for=""><%=teacher_name %> </label>
+  <p class="name ellipsis"><%=t_name %></p>
+</div>
+<div>
+  <label for=""><%=rating %> </label>
+  <div class="score">
+    <span class="int"><%=score_int %></span>
+    <span class="float"><%=score_float %></span>
+  </div>
+</div>
+<div>
+  <label for=""><%=classes %> </label>
+  <p><a href="<%=classLinkUrl %>"><%=class_num %></a></p>
+</div>
+<div>
+  <label for=""><%=nav_series %> </label>
+  <p><a href="<%=seriesLinkUrl %>"><%=series_num %></a></p>
+</div>
+<div>
+  <label for=""><%=organization %> </label>
+  <p><%=org_name %></p>
+</div>

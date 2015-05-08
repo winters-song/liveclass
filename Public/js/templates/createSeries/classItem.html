@@ -1,0 +1,20 @@
+<div class="class-option <%=selected?'selected':'' %>">
+  <span class="glyphicon glyphicon-move move-icon"></span>
+  <span class="name ellipsis">
+    <a href="/Public/classInfo.html?id=<%=clid %>" target="_blank">
+      <%=name %>
+    </a>
+  </span>
+  <div class="item-buttons">
+    <% if(state =='add' && !selected){ %>
+    <a href="#" class="btn btn-sm btn-default add-btn" title="<%=add %>">
+      <span class="glyphicon glyphicon-plus"></span>
+    </a>
+    <% } %>
+    <% if(state =='remove'){ %>
+    <a href="#" class="btn btn-sm btn-default remove-btn" title="<%=remove %>">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+    <% } %>
+  </div>
+</div>

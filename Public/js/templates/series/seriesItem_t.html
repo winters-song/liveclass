@@ -1,0 +1,21 @@
+<div class="item-wrapper">
+  <div class="series-item" >
+    <a class="thumb <%=description?'details':'' %>" href="<%=series_link %>" > 
+      <img src="<%=thumb %>">
+      <p><%=description %></p>
+    </a>
+    <div class="intro">
+      <h4 class="name"><a href="<%=series_link %>" ><%=title %></a></h4>
+    </div>
+    <div class="buttons">
+      <%  if(status!= '2' ){ %>
+      <a href="editSeries.html?id=<%=sid %>" class="btn edit-btn" title="<%=edit %>" >
+        <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+      <a href="#" class="btn remove-btn" title="<%=remove %>">
+        <span class="glyphicon glyphicon-trash"></span>
+      </a>
+      <% } %>
+    </div>
+  </div>
+</div>

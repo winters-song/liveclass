@@ -1,0 +1,283 @@
+@import "../_base.less";
+
+#main-body{
+
+	label{
+		font-weight: 200;
+		font-size: 16px;
+		color:#000;
+	}
+
+	h3.title{
+		margin: 10px 0 20px;
+		font-size: 26px;
+	}
+
+	section.row{
+		margin-bottom: 40px;
+	}
+
+	.more-link{
+		float: right;
+		margin-top: 5px;
+		margin-right: 5px;
+	}
+
+	.item-list{
+		.bg-info{
+			margin: 0 5px !important;
+		}
+	}
+
+
+	.teacher-info{
+		position: relative;
+		background-color: #fff;
+		padding:15px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+
+		label{
+			color: @btn-color;
+			font-size: 14px;
+		}
+
+		.thumb{
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			text-align: center;
+
+			.avatar-md{
+				position: relative;
+
+				.avatar-img{
+					width: 64px;
+					height: 64px;
+					border-radius: 100px;
+				}
+
+				.star{
+					position: absolute;
+					z-index: 2;
+					top: -7px;
+					left: -14px;
+				}
+			} 
+		}
+
+		.name{
+			font-size: 20px;
+			width: 195px;
+		}
+
+		.score {
+			float: left;
+			color: #f07200;
+			font-weight: 700;
+			font-family: tahoma;
+			width: 100%;
+			margin-bottom: 10px;
+
+			.int{
+				font-size: 1.8em;
+				padding: 1px 0;
+				float: left;
+				display: inline;
+				line-height: 1em;
+			}
+
+			.float {
+				font-size: 1.2em;
+				line-height: 1em;
+				float: left;
+				display: inline;
+			}
+		}
+
+		ul{
+			list-style: outside;
+			padding-left: 20px;
+
+			li{
+				margin-bottom: .5em;
+
+				a{
+					color: #555;
+					&:hover{
+						color: #09f;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.info{
+	margin-left: 438px;
+}
+
+
+.action-bar{
+	border-top: 1px dotted #ccc;
+	border-bottom: 1px dotted #ccc;
+	padding: 10px 0;
+	margin-bottom:20px;
+
+	.btn{
+		box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	}
+
+	.rest{
+		line-height: 34px;
+		padding-left: 20px;
+	}
+
+	#share{
+		float: right;
+		margin-top: 5px;
+	}
+}
+
+.details{
+	.thumb{
+		float: left;
+		margin-right: 30px;
+
+		img{
+			width: 400px;
+		}
+	}
+}
+
+.prop{
+	color: #444;
+	line-height: 1.8em;
+	padding-bottom: 10px;
+	margin: 0;
+	overflow: hidden;
+
+	dt{
+		float: left;
+		padding-right: 10px;
+	}
+
+	dd{
+		float: left;
+	}
+}
+
+.en .prop dt{
+	width: 190px;
+}
+.ja .prop dt{
+	width: 110px;
+}
+.ru .prop dt{
+	width: 250px;
+}
+.ko .prop dt{
+	width: 130px;
+}
+.es .prop dt{
+	width: 216px;
+}
+.fr .prop dt{
+	width: 264px;
+}
+
+.bg-danger{
+	padding:15px;
+}
+
+.student-item{
+	margin: 5px;
+}
+
+
+.description-box{
+	p{
+		text-indent: 2em;
+		margin-bottom: 2em;
+	}
+}
+
+.class-box{
+	padding-top: 20px;
+
+	thead{
+		display: none;
+	}
+
+	.num{
+		width: 60px;
+	}
+}
+
+
+#recommend{
+
+	header{
+		overflow: hidden;
+
+		.title{
+			margin-right:20px;
+			font-size: 20px;
+			float: left;
+			margin-bottom: 1em;
+		}
+	}
+
+	.more-link {
+		float: right;
+		margin-top: 15px;
+	}
+	
+	.nav-pills{
+		margin-top: 10px;
+
+		.active a, .active a:hover{
+			color:@btn-color;
+			border-bottom: 3px solid @btn-color;
+			background-color: transparent;
+		}
+
+		a{
+			color: #333;
+			padding: 10px 2px 2px;
+			margin: 0 6px;
+			border-radius:0;
+
+			&:hover{
+				color:#999;
+				border-bottom: 3px solid #bbb;
+				background-color: transparent;
+			}
+		}
+	}
+
+	.item-list{
+		overflow: hidden;
+		height: 328px;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.info{
+		margin: 10px 0;
+		float: left;
+		clear: both;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.details .thumb {
+		margin-right: 0;
+
+		img{
+			max-width: 400px;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+e:
+cd E:\Server\htdocs\cio_teaching\Public
+node r.js -o build/classes.js
+node r.js -o build/classInfo.js
+node r.js -o build/createClass.js
+node r.js -o build/editClass.js
+
+node r.js -o build/series.js
+node r.js -o build/seriesInfo.js
+node r.js -o build/createSeries.js
+node r.js -o build/editSeries.js
+
+node r.js -o build/index.js
+node r.js -o build/lecturerRegister.js
+node r.js -o build/myClass.js
+node r.js -o build/myClass_t.js
+node r.js -o build/mySeries.js
+node r.js -o build/mySeries_t.js
+node r.js -o build/myCourseware.js
+node r.js -o build/myCourseware_t.js
+node r.js -o build/orgRegister.js
+node r.js -o build/preview.js
+node r.js -o build/teachers.js
+node r.js -o build/students.js
+node r.js -o build/info.js
+node r.js -o build/profile.js
+

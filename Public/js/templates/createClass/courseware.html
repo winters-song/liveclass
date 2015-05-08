@@ -1,0 +1,73 @@
+<div class="item-list-wrapper">
+  <div class="half-wrapper">
+    <div class="half-header">
+      <label><%=selected %>:</label>
+      <a href="#" class="remove-all pull-right" ><%=remove_all %></a>
+    </div>
+    <div class="half" style="max-height:598px;">
+      <div class="selected-list"></div>
+    </div>
+    <div class="buttons">
+      <a href="#" class="btn btn-success btn-md submit-btn" data-loading-text="<%=waiting_text %>..." >
+        <span class="glyphicon glyphicon-send"></span> <%=submit %>
+      </a>
+
+      <a href="#" class="btn btn-link btn-md prev-btn">
+        <%=step_prev %>
+      </a> 
+      <!-- <a href="#" class="btn btn-primary btn-md next-btn">
+        <%=step_next %>
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a> -->
+    </div>
+  </div>
+
+	<div class="half-wrapper">
+    <div class="half-header">
+      <label><%=select_courseware %>:</label>
+      <a href="#" class="select-all pull-right" ><%=select_all %></a>
+    </div>
+
+    <form id="courseware-search" class="form-inline">
+      <div class="form-group" >
+        <label class="radio-inline">
+          <input type="radio" name="type" value="all" checked> <%=all %>
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="type" value="doc"> <%=doc %>
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="type" value="video"> <%=video %>
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="type" value="audio"> <%=audio %>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" name="display_name" >
+          <span class="input-group-btn">
+            <button class="btn btn-primary search-btn" type="button" >
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+            <a href="#" class="btn btn-success" id="upload-btn" data-toggle="modal" data-target="#coursewareAdd" title="<%=upload_courseware %>" >
+              <span class="glyphicon glyphicon-open" ></span> 
+            </a>
+          </span>
+        </div>
+      </div>
+    </form>
+
+    <div class="half">
+    	<div class="item-list"></div>
+    </div>
+    <div class="pagingbar"></div>
+  </div>
+</div>
+
+<div class="form-group error-info" style="display:none;">
+  <p class="alert alert-danger"></p>
+</div>
+
+

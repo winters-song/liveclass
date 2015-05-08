@@ -1,0 +1,116 @@
+
+<div id="tbar">
+  <div class="container">
+    <div class="row">
+      <ul class="links">
+        <li><a href="http://www.chinesecio.com/" target="_blank"><%=CIO_full %></a></li>
+        <li><a href="http://bridge.chinese.cn/" target="_blank"><%=CB_full %></a></li>
+        <li><a href="http://elibrary.chinesecio.com/" target="_blank"><%=e_Library %></a></li>
+        <li><a href="http://www.chinesecio.com/page/rewards" target="_blank"><%=online_store %></a></li>
+      </ul>
+
+      <div class="lang-bar" id="lang-btn">
+        <a href="#" class="lanbtn"><%=language %></a>
+        <ul class="sub">
+          <li><a href="javascript:;" data-label="en">English</a></li>
+          <li><a href="javascript:;" data-label="cn">简体中文</a></li>
+          <li><a href="javascript:;" data-label="fr">Français</a></li>
+          <li><a href="javascript:;" data-label="ko">한국어</a></li>
+          <li><a href="javascript:;" data-label="ja">日本語</a></li>
+          <li><a href="javascript:;" data-label="ru">Pусский</a></li> 
+          <li><a href="javascript:;" data-label="es">Español</a></li>
+        </ul>
+      </div>
+
+      <ul class="unlogged">
+        <li><a href="#" id="login-btn"><%=sign_in %></a></li>
+        <li><a href="#" id="register-btn" target="_blank" ><%=register %></a></li>
+      </ul>
+  
+      <div class="profiles"></div>    
+    </div>
+  </div>
+</div>
+
+<section id="banner">
+  <div class="container">
+    <div class="row">
+      <div id="logo">
+        <h1><a href="http://liveclass.chinesecio.com"><%=live_class %></a></h1>
+        <a href="http://liveclass.chinesecio.com" class="subtitle"><%=site_slogan %></a>
+      </div>
+
+      <a href="#" id="open-class" ><%=create_class %></a>
+
+      <div id="search-box">
+        <input class="" type="text" placeholder="<%=search_class %>...">
+        <a href="#" class="search-btn">
+          <i class="icon-search"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="navigation" id="navigation">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="index.html" class="nav-btn icon-home" data-tab="home"></a>
+      </li>
+      <li>
+        <a href="/Public/classes.html?state=1&amp;order=1" class="nav-btn" data-tab="class"><%=classes %></a>
+      </li>
+      <!-- <li>
+        <a href="/Public/series.html" class="nav-btn" data-tab="series"><%=nav_series %></a>
+      </li> -->
+      <li>
+        <a href="/Public/teachers.html" class="nav-btn" data-tab="teacher"><%=teachers %></a>
+      </li>
+
+      <li class="li-myclass">
+        <a href="#" class="nav-btn" id="nav-my-class" data-tab="myclass"><%=my_class %></a>
+      </li>
+
+      <li class="li-teacher">
+        <a href="/Public/myLiveClass.html" class="nav-btn" data-tab="liveclass"><%=nav_myliveclass %></a>
+      </li>
+      <!-- <li class="li-teacher">
+        <a href="/Public/mySeries.html" class="nav-btn" data-tab="mySeries"><%=nav_myseries %></a>
+      </li> -->
+      <li class="li-teacher">
+        <a href="/Public/courseware.html" class="nav-btn" data-tab="courseware"><%=nav_mycourseware %></a>
+      </li>
+      <li class="li-teacher">
+        <a href="/Public/students.html" class="nav-btn" data-tab="students"><%=nav_mystudent %></a>
+      </li>
+      <li class="li-teacher">
+        <a href="/Public/createClass.html.html" class="nav-btn" data-tab="createClass">
+          <%=create_a_class %> <span class="glyphicon glyphicon-plus"></span>
+        </a>
+      </li>
+
+      <li class="li-student">
+        <a href="/Public/myClass.html" class="nav-btn" data-tab="myClass"><%=nav_myclass %></a>
+      </li>
+      <li class="li-student">
+        <a href="/Public/myCourseware.html" class="nav-btn" data-tab="myCourseware"><%=nav_mycourseware %></a>
+      </li>
+    </ul>
+
+    <div class="form-group pull-right">
+      <label><%=view_as %> : </label>
+      <select class="form-control select">
+        <option value="teacher"><%=teacher %></option>
+        <option value="student"><%=student %></option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<div class="alert alert-warning alert-dismissible" id="before_maintenance" style="display:none;" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <div class="container">
+    <strong style="font-size:16px;"></strong>
+  </div>
+</div>

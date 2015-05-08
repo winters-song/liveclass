@@ -1,0 +1,106 @@
+@import "../_base.less";
+@import "./_wizardNav.less";
+
+.cover-page{
+	.column{
+		width: 410px;
+		float: left;
+		margin-right: 10px;
+
+		h3{
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.thumb{
+			background-color: #fff;
+			position: relative; 
+			overflow: hidden;
+			border: 1px solid #ddd; 
+			width: 402px;
+			height: 227px;
+
+			img{
+				width: 100%;
+			}
+
+			label{
+				font-size: 30px;
+				padding: 93px;
+				display: block;
+				text-align: center;
+				font-weight: 200;
+				background: #ccc;
+				color: #888;
+			}
+		}
+	}
+
+	.upload{
+		padding-top:20px;
+
+		.btn{
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.class-option{
+	height: 48px;
+	position: relative;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+
+	&.selected{
+		background-color: #8df;
+	}
+	
+	.move-icon{
+		cursor: move;
+		position: absolute;
+		left: 14px;
+		top: 14px;
+	}
+
+	.name{
+		cursor: default;
+		text-align: left;
+		font-size: 14px;
+		line-height: 1.8em;
+		overflow: hidden;
+		color: #333;
+		margin: 10px 0;
+		padding-left: 50px;
+		padding-right: 60px;
+
+		a:hover{
+			text-decoration: underline;
+		}
+	}
+
+	.item-buttons{
+		position: absolute;
+		right: 16px;
+		top: 8px;
+		text-align: right;
+	}
+
+}
+
+.select-box .class-option{
+	.name{
+		padding-left: 20px;
+	}
+
+	.move-icon{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#standard-btn{
+		display: none;
+	}
+}
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>在线课堂 - Live Class | 网络孔子学院, 学习汉语, 体验文化 - Confucius Institute Online, Learning Chinese, Experiencing Culture</title>
+  <meta name="keywords" content="网络孔子学院, 孔子学院, 汉语教学, 汉语学习, 对外汉语, 在线教学, 中国文化, 在线课堂, Confucius Institute Online, Confucius Institute, Chinese language teaching, Chinese language learning, Chinese for foreigners, Online teaching, Chinese culture, Live Class ">
+  <meta name="description" content="网络孔子学院是为世界各地的汉语学习者和爱好者提供汉语学习课程、了解中国文化、分享学习经验，以及为对外汉语教学教师和志愿者提供汉语教学、分享教学经验的平台。Confucius Institute Online is devoted to providing a comprehensive platform for Chinese language learners and teachers across the world to share their learning and teaching experiences, get to understand Chinese culture and history, and exchange information.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link rel="stylesheet" href="js/libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="js/libs/select2/select2.css"/>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+  <!--[if lt IE 9]>
+    <script src="js/libs/utils/json3.min.js"></script>
+    <script src="js/libs/utils/respond.min.js"></script>
+  <![endif]-->
+<style>
+.buttons{
+  text-align: center;
+  padding: 20px 0;
+}
+
+.type-collapse{
+  display: none;
+  padding-left: 20px;
+}
+</style>
+
+</head>
+<body class="page-not-front page-lecturer-register">
+
+<div class="page-top"></div>
+<div class="page-body">
+  <nav id="main-nav">
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li data-tab="liveclass" class="active"><a href="javascript:;" id="page-title"></a></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="main" >
+    <div class="container">
+      <article id="main-body">
+        <div class="col-xs-12">
+          <p class="alert alert-info" id="teacher_reg_msg" style="margin-bottom:20px;"></p>
+        </div>
+        <form role="form " id="form"></form>
+      </article>
+    </div>
+  </section>
+</div>
+
+<div class="page-bottom"></div>
+ 
+<script type="text/template" id="formTpl">
+<div class="col-xs-12 col-sm-9 col-md-6">
+  <div class="form-group">
+    <label><%=name %> <span class="required">*</span></label>
+    <input type="text" class="form-control" name="name" >
+  </div>
+  <div class="form-group">
+    <label><%=email %> <span class="required">*</span></label>
+    <input type="text" class="form-control" name="email" id="email" >
+  </div>
+  <div class="form-group" id="email-error" style="display:none;">
+    <p class="alert alert-danger"><%=email_exist_err %></p>
+  </div>
+
+  <input type="hidden" name="belongs" value="school" />
+
+  <div class="form-group">
+    <label>教师类型 <span class="required">*</span></label>
+    <div id="type-list" >
+      <label class="radio-inline">
+        <input type="radio" name="teacher_type" value="1" data-target="#volunteer"> 志愿者教师
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="teacher_type" value="2" data-target="#dispatch"> 汉语教师
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="teacher_type" value="3" data-target="#teach-status"> 高校
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="teacher_type" value="4" > 汉语桥网络教师
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="teacher_type" value="5" > 新汉学博士
+      </label>
+    </div>
+  </div>
+
+  <div id="volunteer" class="type-collapse">
+
+    <div class="form-group">
+      <label>所属孔院 <span class="required">*</span></label>
+      <select name="org" id="org_select" style="width:100%;"></select>
+    </div>
+
+    <div class="form-group">
+      <label>赴任国家 <span class="required">*</span></label>
+      <select name="work_country" id="work_country" style="width:100%;"></select>
+    </div>
+
+    <div class="form-group">
+      <label>赴任时间 <span class="required">*</span></label>
+      <div class="input-group date" id="work_date">
+        <input type="text" class="form-control" name="work_date" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>赴任岗位 <span class="required">*</span></label>
+      <input type="text" class="form-control" name="work_job" >
+    </div>
+  </div>
+
+  <div id="dispatch" class="type-collapse">
+    <div class="form-group">
+      <label>派遣类型 <span class="required">*</span></label>
+      <div id="dispatch-list" >
+        <label class="radio-inline">
+          <input type="radio" name="dispatch" value="1"> 公派
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="dispatch" value="2"> 外派
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="teach-status" class="type-collapse">
+    <div class="form-group">
+      <label>当前状态 <span class="required">*</span></label>
+      <div id="teach-status-list">
+        <label class="radio-inline">
+          <input type="radio" name="work_status" value="1" checked> 在读
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="work_status" value="2"> 教师
+        </label>
+      </div>
+    </div>
+
+    <div id="college-teacher" style="display:none;">  
+      <div class="form-group">
+        <label>所属学校省份 <span class="required">*</span></label>
+        <select name="province" id="province_select" style="width:100%;">
+          <option value="1">北京</option>
+          <option value="2">上海</option>
+          <option value="3">黑龙江</option>
+          <option value="4">吉林</option>
+          <option value="5">辽宁</option>
+          <option value="6">天津</option>
+          <option value="7">安徽</option>
+          <option value="8">江苏</option>
+          <option value="9">浙江</option>
+          <option value="10">陕西</option>
+          <option value="11">湖北</option>
+          <option value="12">广东</option>
+          <option value="13">湖南</option>
+          <option value="14">甘肃</option>
+          <option value="15">四川</option>
+          <option value="16">山东</option>
+          <option value="17">福建</option>
+          <option value="18">河南</option>
+          <option value="19">重庆</option>
+          <option value="20">云南</option>
+          <option value="21">河北</option>
+          <option value="22">江西</option>
+          <option value="23">山西</option>
+          <option value="24">贵州</option>
+          <option value="25">广西</option>
+          <option value="26">内蒙古</option>
+          <option value="27">宁夏</option>
+          <option value="28">青海</option>
+          <option value="29">新疆</option>
+          <option value="30">海南</option>
+          <option value="31">西藏</option>
+          <option value="32">香港</option>
+          <option value="33">澳门</option>
+          <option value="34">台湾</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>所属学校 <span class="required">*</span></label>
+        <select name="school_id" id="college_select" style="width:100%;"></select>
+        <input type="hidden" name="work_school" >
+      </div>  
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label><%=gender %> </label>
+    <div id="gender-list">
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="M" checked> <%=male %> 
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="gender" value="F"> <%=female %> 
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label><%=DOB %> </label>
+    <div class="input-group date" id="birthday">
+      <input type="text" class="form-control" name="birthday" />
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label><%=id_num %> </label>
+    <input type="text" class="form-control" name="identifier" >
+  </div>
+
+  <div class="form-group">
+    <label><%=phone %> </label>
+    <input type="text" class="form-control" name="phone" >
+  </div>
+
+  <div class="form-group">
+    <label><%=education %> </label>
+    <select class="form-control" name="education" >
+      <option value="1"><%=education_1 %></option>
+      <option value="2"><%=education_2 %></option>
+      <option value="3" selected ><%=education_3 %></option>
+      <option value="4"><%=education_4 %></option>
+      <option value="5"><%=education_5 %></option>
+      <option value="6"><%=education_6 %></option>
+      <option value="7"><%=education_7 %></option>
+      <option value="8"><%=education_8 %></option>
+      <option value="9"><%=education_9 %></option>
+      <option value="10"><%=education_10 %></option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label><%=major %> </label>
+    <input type="text" class="form-control" name="major" >
+  </div>
+
+  <div class="form-group">
+    <label><%=graduated_school %> </label>
+    <input type="text" class="form-control" name="graduated_school" >
+  </div>
+
+  <div class="form-group">
+    <label><%=job_title %> </label>
+    <input type="text" class="form-control" name="job_title" >
+  </div>
+  
+  <div class="form-group">
+    <label><%=work_experience %> </label>
+    <select class="form-control" name="work_experience" >
+      <option value="0"><%=none %></option>
+      <option value="1"><%=one_year %></option>
+      <option value="2"><%=two_year %></option>
+      <option value="3"><%=three_year %></option>
+      <option value="4"><%=four_year %></option>
+      <option value="5"><%=five_ten_year %></option>
+      <option value="6"><%=more_than_ten %></option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label><%=teacher_certification %> </label>
+    <input type="text" class="form-control" name="teacher_certification" >
+  </div>
+
+  <div class="form-group">
+    <label><%=witness %> </label>
+    <input type="text" class="form-control" name="witness" >
+  </div>
+
+  <div class="form-group">
+    <label><%=witness_contact %> </label>
+    <input type="text" class="form-control" name="witness_contact" >
+  </div>
+
+  <div class="form-group error-info" style="display:none;">
+    <p class="alert alert-danger"></p>
+  </div>
+
+  <div class="buttons col-xs-12">
+    <a href="#" class="btn btn-primary btn-md" id="submit-btn">
+      <%=submit %>
+    </a>
+  </div>
+
+</div>
+
+</script>
+
+<script src="js/plugins.js"></script>
+<script src="js/libs/require/require.js"></script>
+<script>
+if(window.devMode == 'dev'){
+  document.write('<script src="js/lecturerRegister.js"><\/script>');
+} else{
+  document.write('<script src="built/lecturerRegister.js"><\/script>');
+}
+</script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-43672246-1', 'chinesecio.com');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript" src="/Public/js/services/services.js"></script>
+</body>
+</html>

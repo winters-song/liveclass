@@ -1,0 +1,55 @@
+<div class="cover-page">
+	<div class="upload" >
+
+		<form role="form" class="form-horizontal" method="post" action="/api/photos" enctype="multipart/form-data">
+      <span class="btn btn-success fileinput-button">
+        <i class="glyphicon glyphicon-picture"></i>
+        <span><%=select_cover %></span>
+        <input class="fileupload" type="file" name="img" >
+      </span>
+
+      <div id="progress" class="progress">
+	      <div class="progress-bar progress-bar-success"></div>
+	    </div>
+    </form>
+		<p><%=cover_type_msg %></p>
+	</div>
+
+
+	<div style="overflow:hidden">
+		<div id="cover-wrap" class="column">
+			<h3><%=selected_img %></h3>
+			<div id="cover" class="thumb">
+				<label>400 x 225</label>
+				<!-- <img id="cover-img" src="http://img.xiami.net/images/collect/933/33/39520933_1420679920_jMST.jpg"> -->
+			</div>
+		</div>
+
+		<div id="preview-wrap" class="column">
+			<h3><%=cover_preview %></h3>
+			<div id="preview" class="thumb" >
+				<!-- <img id="preview-img" src="http://img.xiami.net/images/collect/933/33/39520933_1420679920_jMST.jpg"> -->
+			</div>
+		</div>
+	</div>
+	<p><%=cover_minsize_msg %></p>
+
+	<input type="hidden" value="0" name="imgx" id="imgx">
+	<input type="hidden" value="0" name="imgy" id="imgy">
+	<input type="hidden" value="300" name="imgw" id="imgw">
+	<input type="hidden" value="300" name="imgh" id="imgh">
+	<input type="hidden" value="images/collect/933/33/39520933_1420679920_jMST.jpg" name="imgsrc" id="imgsrc">
+	<input type="hidden" value="0" name="updateimg" id="updateimg">
+	<input type="hidden" value="0" name="nosubject" id="nosubject">
+
+	<div class="buttons">
+	  <a href="#" class="btn btn-primary btn-md next-btn">
+	    <%=step_next %>
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+
+	  <a href="#" class="btn btn-link btn-md prev-btn">
+	    <%=step_prev %>
+	  </a> 
+	</div>
+</div>

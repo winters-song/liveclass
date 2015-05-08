@@ -1,0 +1,77 @@
+<div class="item-wrapper">
+  <div class="class-item">
+    <a class="thumb <%=state_class %>" href="<%=class_link %>" >
+      <div class="highlight">
+        <span class="time"><%=time %></span>
+        <span class="date"><%=date %></span>
+        <%  if (state == 3){ %>
+        <span class="state glyphicon glyphicon-ok" title="<%=state_title %>" ></span>
+        <%  } else if(state == 2) { %>
+        <span class="state glyphicon glyphicon-time" title="<%=state_title %>" ></span>
+        <%  } else if(state == 1) { %>
+        <span class="state glyphicon glyphicon-headphones" title="<%=state_title %>" ></span>
+        <%  }  %>
+      </div>
+    </a>
+
+    <div class="body">
+      <span class="name">
+        <a href="<%=class_link %>" ><%=name %></a>
+      </span>
+
+      <% if(status == '2'){ %>
+        <div class="replay-status">
+          <p class="pull-left" style="padding-right:10px"><%=audit_failed %> : </p>
+          <p><%=ask_admin %></p>
+        </div>
+
+      <% } else if(replayable){ %>
+        <div class="replay-status">
+          <p class="pull-left" style="padding-right:10px"><%=replay_status %> : </p>
+
+          <% if (enabled=='3'){ %>
+            <p><%=close_btn %>. <%=ask_admin %></p>
+          <% }else if (!expired ){ %>
+          <div class="onoffswitch pull-left <%=enabled=='1'?'onoffswitch-checked':'' %>">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-<%=clid %>" <%=enabled=='1'?'checked':'' %>>
+            <label class="onoffswitch-label" for="switch-<%=clid %>">
+              <span class="onoffswitch-inner">
+                <span class="onoffswitch-inner-before" title="<%=open_btn %>"></span>
+                <span class="onoffswitch-inner-after" title="<%=close_btn %>"></span>
+              </span> 
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+          <% } else if(enabled=='2'){ %>
+            <%=close_btn %>
+          <% } else { %> 
+            <%=open_btn %>
+          <% } %> 
+        </div>
+      <% } %>
+
+      <div class="info">
+        <% if(!!duration){ %>
+        <p class="time"><%=lesson %> : <i><%=duration %> <%=mins %></i></p>
+        <% } %>
+      </div>
+      <div class="buttons">
+        <% if(viewable || replayable){ %>
+          <a href="#" target="_blank" class="btn view-btn" title="<%=view %>">
+            <span class="glyphicon glyphicon-log-in"></span>
+          </a>
+        <% }
+           if(editable && status!= '2' ){ %>
+            <a href="editClass.html?id=<%=clid %>" class="btn edit-btn" title="<%=edit %>" >
+              <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+        <% } 
+           if(deletable && status!= '2' ){ %>   
+            <a href="#" class="btn remove-btn" title="<%=remove %>">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>

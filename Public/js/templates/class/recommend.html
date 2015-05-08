@@ -1,0 +1,29 @@
+<header>
+  <h3 class="title">
+    <%=recommend_content %>
+  </h3>
+
+  <div id="recommend-type" class="dropdown pull-left">
+    <button class="btn btn-default dropdown-toggle navbar-toggle collapsed" data-toggle="dropdown">
+      <span class="glyphicon glyphicon-option-vertical"></span>
+    </button>
+
+    <ul class="nav nav-pills" role="menu">
+      <li class="item" data-type="preclass">
+        <a href="#"data-toggle="tab"><%=upcoming_class %></a>
+      </li>
+      <li class="item" data-type="class">
+        <a href="#" data-toggle="tab"><%=replay_class %></a>
+      </li>
+      <li class="item" data-type="lesson">
+        <a href="#" data-toggle="tab"><%=s_lesson %></a>
+      </li>
+      <li class="item" data-type="course">
+        <a href="#" data-toggle="tab"><%=s_course %></a>
+      </li>
+    </ul>
+  </div>
+  
+  <a href="classes.html?state=1&amp;order=1" class="more-link"><%=change_btn %></a>
+</header>
+<article class="item-list"></article>

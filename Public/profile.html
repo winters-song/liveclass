@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>在线课堂 - Live Class | 网络孔子学院, 学习汉语, 体验文化 - Confucius Institute Online, Learning Chinese, Experiencing Culture</title>
+  <meta name="keywords" content="网络孔子学院, 孔子学院, 汉语教学, 汉语学习, 对外汉语, 在线教学, 中国文化, 在线课堂, Confucius Institute Online, Confucius Institute, Chinese language teaching, Chinese language learning, Chinese for foreigners, Online teaching, Chinese culture, Live Class ">
+  <meta name="description" content="网络孔子学院是为世界各地的汉语学习者和爱好者提供汉语学习课程、了解中国文化、分享学习经验，以及为对外汉语教学教师和志愿者提供汉语教学、分享教学经验的平台。Confucius Institute Online is devoted to providing a comprehensive platform for Chinese language learners and teachers across the world to share their learning and teaching experiences, get to understand Chinese culture and history, and exchange information.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link rel="stylesheet" href="js/libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/profile.css">
+  
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+  <!--[if lt IE 9]>
+    <script src="js/libs/utils/json3.min.js"></script>
+    <script src="js/libs/utils/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="page-not-front page-classInfo">
+
+<div class="page-top"></div>
+<div class="page-body">
+
+  <section id="main" >
+    <div id="user-banner"></div>
+
+    <div id="summary">
+      <div class="container">
+        <!-- <div class="sample col-xs-12 col-md-4 pull-right">
+          <a class="video-box" href="#">
+            <h4>示范课</h4>
+            <span class="glyphicon glyphicon-play-circle"></span>
+          </a>
+        </div> -->
+        <div class="description"></div>
+      </div>
+    </div>
+
+    <div id="tabs">
+      <div class="container">
+        <div class="toolbar"></div>
+      </div>
+    </div>
+      
+    <article id="main-body">
+      <div class="container">
+        <div class="item-list-wrapper">
+          <div class="item-list"></div>
+        </div>
+        <div class="pagingbar"></div>
+      </div>
+    </article>
+    
+  </section>
+</div>
+
+<div class="page-bottom"></div>
+
+<script type="text/template" id="teacherTpl">
+<div class="container">
+  <div class="sigil">
+    <div class="org">
+      <img src="<%=org_logo %>" alt="" title="<%=org_name %>">
+    </div>
+  </div>
+  <div class="teacher-info">
+    <div class="thumb">
+      <div class="avatar-md">
+        <img src="<%=thumbUrl %>" alt="" class="avatar-img">
+        <%  if(teacher_star == 'gold'){ %>
+          <img src="/Public/img/gold_star.png" class="star" alt="" title="<%=gold_teacher %>">
+        <%  } else if(teacher_star == 'silver'){ %>
+          <img src="/Public/img/silver_star.png" class="star" alt="" title="<%=silver_teacher %>">
+        <%  }  %>
+      </div>
+    </div>
+    <div>
+      <% if(!_owner){ %>
+      <p class="name ellipsis"><%=t_name %></p>
+      <% } else { %>
+      <p class="name ellipsis editable" data-toggle="tooltip" data-placement="bottom" title="<%=click_to_edit %>"><%=t_name %></p>  
+
+      <div class="editor hidden">
+        <input id="nickname-editor" class="form-control">
+      </div>
+      <% } %>
+
+    </div>
+    <div class="row stat">
+      <div class="col-xs-4">
+        <label for=""><%=classes %> </label>
+        <p><%=class_num %></p>
+      </div>
+      <div class="col-xs-4">
+        <label for=""><%=nav_series %> </label>
+        <p><%=series_num %></p>
+      </div>
+      <div class="col-xs-4">
+        <label for=""><%=rating %> </label>
+        <div class="score">
+          <span class="int"><%=score_int %></span>
+          <span class="float"><%=score_float %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+<script type="text/template" id="descriptionTpl">
+<% if(!_owner){ %>
+<div class="content">
+  <%=_description?_description:description_empty_text %>
+</div>
+<% } else { 
+
+  if(_error) { %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong><%=_error %></strong>
+    </div>
+  <% } %>
+
+<div class="content editable" data-toggle="tooltip" data-placement="bottom" title="<%=click_to_edit %>">
+  <%=_description %>
+</div>
+
+<div class="add-box buttons pull-left <%=_description?'hidden':''  %>" >
+  <a id="description-btn" class="btn btn-link">
+    <%=add_profile %>
+  </a>
+</div>
+
+<div class="editor hidden">
+  <textarea id="description-editor" class="form-control" rows="3"></textarea>
+  <div class="buttons">
+    <button id="description-save-btn" class="btn btn-primary" data-loading-text="<%=waiting_text %>..."><%=save %></button>
+    <button id="description-cancel-btn" class="btn btn-default"><%=cancel %></button>
+  </div>
+</div>
+<% } %>
+</script>
+
+<script type="text/template" id="tabTpl">
+<ul class="nav nav-tabs">
+  <li class="active" data-type="class">
+    <a href="#" data-toggle="tab"><%=classes %></a>
+  </li>
+  <li class="" data-type="series">
+    <a href="#" data-toggle="tab"><%=nav_series %></a>
+  </li>
+</ul>
+</script>
+
+<script src="js/plugins.js"></script>
+<script src="js/libs/require/require.js"></script>
+<script>
+if(window.devMode == 'dev'){
+  document.write('<script src="js/profile.js"><\/script>');
+} else{
+  document.write('<script src="built/profile.js"><\/script>');
+}
+</script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-43672246-1', 'chinesecio.com');
+ga('send', 'pageview');
+</script>
+
+<script type="text/javascript" src="/Public/js/services/services.js"></script>
+</body>
+</html>

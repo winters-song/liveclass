@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+.icon32 {
+  width: 32px;
+  height: 32px;
+  background: url(../img/filetype_32.png) 0 -445px no-repeat;
+  line-height: 0;
+  font-size: 0;
+  display: inline-block;
+}
+
+.icon_flash, .icon_flv {
+background-position: 0 -84px;;
+}
+.icon_doc {
+background-position: 0 -252px;
+}
+.icon_other {
+background-position: 0 -445px;
+}
+.icon_pic {
+background-position: 0 -559px;
+}
+.icon_pdf {
+background-position: 0 -598px;
+}
+.icon_video, .icon_mp4, .icon_3gp,.icon_avi,.icon_dat,.icon_f4v,.icon_flv,.icon_m4v,.icon_mpeg,.icon_mkv,.icon_mp4,.icon_mpg,.icon_rm,.icon_rmvb,.icon_wmv {
+background-position: 0 -682px;
+}
+.icon_music, .icon_mp3, .icon_wav, .icon_flac, .icon_ape,.icon_midi,.icon_wma{
+background-position: 0 -1012px;
+}
+
+.icon_txt, .icon_rtf {
+background-position: 0 -722px;
+}
+.icon_ppt {
+background-position: 0 -846px;
+}
+.icon_zip, .icon_rar {
+background-position: 0 -888px;
+}
+.icon_xls {
+background-position: 0 -928px;
+}
+.icon_html {
+background-position: 0 -369px;
+}
+
+
+

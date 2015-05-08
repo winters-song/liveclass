@@ -1,0 +1,169 @@
+@import "../_base.less";
+@import "./_wizardNav.less";
+
+
+#is_public {
+	padding-top: 1px; 
+	
+	.checkbox{
+		margin-top: 1em;
+	}
+}
+
+
+.courseware-option{
+	height: 48px;
+	position: relative;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+
+	&.selected{
+		background-color: #8df;
+	}
+
+	.icon32 {
+		position: absolute;
+		left: 10px;
+		top: 8px;
+	}
+
+	.name{
+		cursor: default;
+		text-align: left;
+		font-size: 14px;
+		line-height: 1.8em;
+		overflow: hidden;
+		color: #333;
+		margin: 10px 0;
+		padding-left: 50px;
+		padding-right: 60px;
+
+		a:hover{
+			text-decoration: underline;
+		}
+	}
+
+	.item-buttons{
+		position: absolute;
+		right: 16px;
+		top: 8px;
+		text-align: right;
+	}
+
+}
+
+.student-option{
+	height: 58px;
+	margin-bottom: 10px;
+	display: block;
+	position: relative;
+	background-color: #fff;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #aaa;
+	border-top-color:#ddd;
+	border-left-color:#ddd;
+	border-bottom-color:#999;
+
+	&.selected{
+		background-color: #8df;
+	}
+
+	.avatar {
+		position: absolute;
+		left: 0;
+		top:0;
+		width: 56px;
+	}
+
+	.name{
+		cursor: default;
+		display: block;
+		text-align: left;
+		font-size: 14px;
+		line-height: 1.3em;
+		height: 1.3em;
+		overflow: hidden;
+		color: #333;
+		margin: 18px 0 4px;
+		padding-left: 66px;
+		width: 200px;
+	}
+
+	.item-buttons{
+		display: none;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		text-align: right;
+	}
+
+	&:hover{
+		.name{
+			width: 120px;
+		}
+		.item-buttons{
+			display: block;
+		}
+	}
+
+}
+
+.preview{
+	background-color: #fff;
+	margin-top: 10px;
+	border-top: 1px solid #ddd;
+
+	.item{
+		padding: 10px;
+		overflow: hidden;
+	}
+}
+
+.item-wrapper {
+	float: left;
+}
+
+.save-group{
+	margin-top: 10px;
+}
+
+@media only screen and (min-width: 1260px){
+	.item-wrapper {
+		width: 48%;
+	}
+}
+
+@media only screen and (max-width: 950px){
+	#page-student{
+		.item-wrapper{
+			width: 96%;
+	 	}
+	}
+
+}
+
+@media only screen and (max-width: 760px) {
+	#page-courseware{
+		.half-wrapper{
+			width: 100%;
+	 	}
+	}
+
+	#page-student{
+		.half-wrapper{
+			width: 100%;
+	 	}
+
+		.item-wrapper{
+			width: 48%;
+	 	}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#time-btn{
+		display: none;
+	}
+}
